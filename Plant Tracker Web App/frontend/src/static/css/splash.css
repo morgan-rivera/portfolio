@@ -1,0 +1,26 @@
+ body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4CAF50;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+.splash-container {
+    text-align: center;
+}
+.logo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+}
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+.loader {
+    margin-top: 20px;
+}

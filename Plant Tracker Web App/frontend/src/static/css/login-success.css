@@ -1,0 +1,211 @@
+/* ── Login Success Splash Page ── */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --green-deep: #1e4b3f;
+    --green-mid: #2a6f54;
+    --green-bright: #3a7d34;
+    --green-leaf: #5fa85a;
+    --green-pale: #d4e6c3;
+    --cream: #f4f6f0;
+    --white: #ffffff;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--green-deep);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: relative;
+}
+
+/* ── Animated background gradient ── */
+.bg-gradient {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 20% 50%, rgba(42, 111, 84, 0.6) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 30%, rgba(58, 125, 52, 0.4) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 90%, rgba(95, 168, 90, 0.3) 0%, transparent 50%),
+        var(--green-deep);
+    animation: bgShift 4s ease-in-out infinite alternate;
+}
+
+@keyframes bgShift {
+    0%   { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+/* ── Floating leaf particles ── */
+.leaves {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.leaf {
+    position: absolute;
+    font-size: 1.4rem;
+    opacity: 0;
+    animation: leafFall linear forwards;
+}
+
+@keyframes leafFall {
+    0%   { transform: translateY(-40px) rotate(0deg) scale(0.6); opacity: 0; }
+    15%  { opacity: 0.7; }
+    85%  { opacity: 0.5; }
+    100% { transform: translateY(105vh) rotate(360deg) scale(1); opacity: 0; }
+}
+
+/* ── Main content ── */
+.splash-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ── Checkmark ring ── */
+.check-ring {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.check-ring svg {
+    width: 100%;
+    height: 100%;
+}
+
+.ring-circle {
+    fill: none;
+    stroke: var(--green-pale);
+    stroke-width: 3;
+    stroke-dasharray: 283;
+    stroke-dashoffset: 283;
+    stroke-linecap: round;
+    animation: drawRing 0.8s ease-out 0.2s forwards;
+    transform-origin: center;
+}
+
+@keyframes drawRing {
+    to { stroke-dashoffset: 0; }
+}
+
+.check-path {
+    fill: none;
+    stroke: var(--white);
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: drawCheck 0.4s ease-out 0.9s forwards;
+}
+
+@keyframes drawCheck {
+    to { stroke-dashoffset: 0; }
+}
+
+.check-glow {
+    position: absolute;
+    inset: -20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 230, 195, 0.3) 0%, transparent 70%);
+    opacity: 0;
+    animation: glowPulse 1.2s ease-out 0.8s forwards;
+}
+
+@keyframes glowPulse {
+    0%   { opacity: 0; transform: scale(0.5); }
+    50%  { opacity: 1; }
+    100% { opacity: 0.4; transform: scale(1.2); }
+}
+
+/* ── Text ── */
+.greeting {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--white);
+    opacity: 0;
+    transform: translateY(16px);
+    animation: fadeUp 0.6s ease-out 1.1s forwards;
+}
+
+.sub-text {
+    font-size: 1rem;
+    color: var(--green-pale);
+    font-weight: 400;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: fadeUp 0.6s ease-out 1.3s forwards;
+}
+
+.username {
+    font-weight: 600;
+    color: var(--white);
+}
+
+@keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Progress bar ── */
+.progress-wrapper {
+    margin-top: 28px;
+    width: 200px;
+    opacity: 0;
+    animation: fadeUp 0.5s ease-out 1.5s forwards;
+}
+
+.progress-track {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--green-leaf), var(--green-pale));
+    border-radius: 4px;
+    animation: fillBar 2s ease-in-out 1.6s forwards;
+}
+
+@keyframes fillBar {
+    to { width: 100%; }
+}
+
+.progress-label {
+    margin-top: 8px;
+    font-size: 0.75rem;
+    color: rgba(212, 230, 195, 0.6);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+/* ── Mobile ── */
+@media (max-width: 480px) {
+    .check-ring {
+        width: 80px;
+        height: 80px;
+    }
+    .greeting {
+        font-size: 1.6rem;
+    }
+    .sub-text {
+        font-size: 0.9rem;
+        padding: 0 20px;
+    }
+}

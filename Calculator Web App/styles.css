@@ -1,0 +1,82 @@
+body { /* overall body */
+    background-color: rgb(210, 222, 234);
+    display: grid; 
+    grid-template-columns: 300px 250px;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "input history"
+        "calculator history"
+        "calculator clear-history";
+    height: 500px;
+    gap:15px;
+    line-height: 50px;
+    margin: 15px;
+}
+
+#display { /* calculator input box */
+    height: 50px;
+    font-size: xx-large;
+    text-align: right;
+    border-radius: 8px;
+    background-color: rgb(218, 231, 236);
+    border: 2px solid black;
+    box-sizing: border-box;
+    padding-right: 10px;
+    overflow-x: auto; 
+}
+#display:focus { /* calculator input box */
+    outline: none;
+}
+
+#buttons { /* calculator buttons */
+    grid-area: calculator;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+    background: rgb(218, 231, 236);
+    border-radius: 8px;
+    gap: 5px;
+    padding: 5px;
+    button {
+        background-color: #99d1dfd0;
+        border: 2px solid black;
+    }
+
+    :last-child {
+        grid-column: span 4;
+    }
+}
+#history { /* calculator history */
+    grid-area: history;
+    background-color: rgb(218, 231, 236);
+    font-size: x-large;
+    height: 100%;
+    overflow-y: auto;
+    border-radius: 18px;
+    border: 2px solid black;
+}
+
+#history ul { /* calculator history box  */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#history ul li { /* calculator history boxes */
+    background-color: #99d1dfd0;
+    border: 1px solid black;
+    border-radius: 8px;
+    margin: 5px;
+    padding: 5px;
+    line-height: 1.5;
+    overflow-x: auto;
+}
+#clear-history { /* clear history button */
+    grid-area: clear-history;
+    display: flex;
+    justify-content: center;
+    button {
+        background-color: #99d1dfd0;
+        border: 2px solid black;
+    }
+}

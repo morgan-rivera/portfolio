@@ -1,0 +1,95 @@
+body {
+  background-color: #EEE;
+  display: flex;
+  flex-direction: column;  
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 60px 0 0 0;
+}
+
+/* smaller image and header for mobile */
+@media (max-width: 500px) {
+  img {
+    max-height: 150px;
+  }
+  h1, h2 {
+    font-size: 1.2em;
+  }
+  form {
+    width: 90%;
+    max-width: 300px;
+    box-sizing: border-box;
+  }
+
+  .form-row label {
+    width: 90%;
+    font-size: 0.9em;
+  }
+
+  .form-row input {
+    width: 80%;
+  }
+}
+
+/* Image */
+img {
+  width: 60%;
+  max-width: 250px; 
+  max-height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+
+/* Headers */
+h1, h2 {
+  font-size: 1.6em;
+  color: #1e4b3f;
+}
+
+
+/* Form */
+form {
+  border: 4px solid #1e4b3f;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex; 
+  flex-direction: column;
+  gap: 20px; 
+  width: 90%;
+  max-width: 400px;
+  margin: 50px auto 0 auto;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.form-row label {
+  text-align: center;
+  width: 150px;
+}
+
+.form-row input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 90%;
+  max-width: 300px;
+  box-sizing: border-box;
+}
+
+/** this is for errorbox in html (similar to day 22 exercise) */
+.hidden { 
+    display: none; 
+}
+.error-message { 
+    color: red; 
+    margin: 10px 0; 
+    text-align: center; 
+}

@@ -1,0 +1,156 @@
+/* Grid layout for dashboard plants */
+.plants-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Plant card styling */
+.plant-card-item {
+    list-style: none;
+    padding: 15px;
+    margin: 0;
+    border: 3px solid #1e4b3f;
+    background-color: white;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.plant-card-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(30, 75, 63, 0.2);
+}
+
+.plant-card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.plant-card-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #1e4b3f;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.plant-card-stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.plant-stat {
+    flex: 1;
+    text-align: center;
+    padding: 5px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+
+.plant-stat-label {
+    font-size: 0.7rem;
+    color: #666;
+    display: block;
+}
+
+.plant-stat-value {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #1e4b3f;
+}
+
+.plant-delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255,255,255,0.9);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    color: #c62828;
+}
+
+.plant-card-item {
+    position: relative;
+}
+
+/** for add plant button */
+.btn-add-plant:hover {
+    background-color: #0f2f27;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn-success {
+    background-color: #1e4b3f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-success:hover {
+    background-color: #0f2f27;
+}
+
+.confirm-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.confirm-box-content {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+}
+
+.confirm-box-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.confirm-box-buttons button {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.confirm-cancel {
+    background: #ccc;
+}
+
+.confirm-ok {
+    background: #c62828;
+    color: white;
+}

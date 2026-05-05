@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evergreen Schedule</title>
+  <link rel="stylesheet" href="../static/css/styles.css">
+  <link rel="stylesheet" href="../static/css/schedule.css">
+  <script type="module" src="../static/js/notifications.js"></script>
+  <script type="module" src="../static/js/schedule.js"></script>
+  <script type="module" src="../static/js/sw.js" defer></script>
+
+
+  <!-- BEGIN FAVICON -->
+  <link rel="icon" href="/static/images/favicon-96x96.png">
+  <meta name="theme-color" content="#1e4b3f">
+  <link rel="apple-touch-icon" sizes="192x192" href="/static/images/icon-192x192.png">
+  <link rel="apple-touch-icon" sizes="256x256" href="/static/images/icon-384x384.png">
+  <link rel="apple-touch-icon" sizes="256x256" href="/static/images/icon-512x512.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="/static/images/icon-512x512.png">
+  <!-- END FAVICON -->
+  <!-- BEGIN INSTALLABLE APP-->
+  <link rel="manifest" href="/static/manifest.webmanifest" />
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-status-bar-style" content="black">
+  <meta name="mobile-web-app-title" content="Evergreen">
+  <!-- END INSTALLABLE APP-->
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="top-bar">
+    <h1>Care Schedule</h1>
+    <img src="../static/images/logo.svg" alt="Evergreen Logo" class="logo">
+     <!-- <button id="enableNotifications" class="notification-btn">Enable Reminders</button>
+     <button id="subscribe">Subscribe to Push</button> -->
+  </header>
+
+  <div id="notification" class="hidden notification"></div>
+
+  <!-- Schedule List (populated by JS from API) -->
+  <main class="schedule-container" id="schedule-list">
+    <p class="loading">Loading schedule...</p>
+  </main>
+
+  <!-- Floating Add Button -->
+  <button class="fab" onclick="addScheduleEntry()">+</button>
+
+  <!-- Navigation bar -->
+    <nav class="bottom-bar">
+        <a href="/dashboard" class="active">
+            <img src="/static/images/icons/home_icon.png" alt="homeIcon" style="width: 24px; height: 24px;">
+            <!-- <span class="nav-icon">&#127968;</span> -->
+            <span>Home</span>
+        </a>
+        <a href="/plants">
+            <img src="/static/images/icons/plant_icon.png" alt="plantIcon" style="width: 24px; height: 24px;">
+            <!-- <span class="nav-icon">&#127807;</span> -->
+            <span>Explore Plants</span>
+        </a>
+        <a href="/schedule">
+            <img src="/static/images/icons/schedule_icon.png" alt="scheduleIcon" style="width: 24px; height: 24px;">
+            <!-- <span class="nav-icon">&#128197;</span> -->
+            <span>Schedule</span>
+        </a>
+        <a href="/profile">
+            <!-- <span class="nav-icon">&#128100;</span> -->
+            <img src="/static/images/icons/profile_icon.png" alt="scheduleIcon" style="width: 24px; height: 24px;">
+            <span>Profile</span>
+        </a>
+    </nav>
+  <!-- <nav class="bottom-bar">
+    <a href="/dashboard">
+      <span class="nav-icon">&#127968;</span>
+      <span>Home</span>
+    </a>
+    <a href="/plants">
+      <span class="nav-icon">&#127807;</span>
+      <span>Plants</span>
+    </a>
+    <a href="/schedule" class="active">
+      <span class="nav-icon">&#128197;</span>
+      <span>Schedule</span>
+    </a>
+    <a href="/profile">
+      <span class="nav-icon">&#128100;</span>
+      <span>Profile</span>
+    </a>
+  </nav> -->
+
+  <script type="module" src="../static/js/schedule.js"></script>
+
+</body>
+</html>

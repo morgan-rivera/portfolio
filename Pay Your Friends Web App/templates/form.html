@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay Your Friends</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <form id="send" action="send" method="POST" enctype="multipart/form-data" novalidate>
+    <h1 id = "title">Pay Your Friends Form</h1>
+
+    <!-- Sender Details -->
+    <section id = "sender">
+      <h2>Sender Details</h2>
+      <br>
+      <!-- Image Input -->
+      <input type="file" id="image" name="image">
+      <br>
+
+      <!-- Preview Image -->
+      <img id="previewImage" alt="Preview" style="max-width: 100px; max-height: 100px;">
+      <script>
+      const imageInput = document.getElementById('image');
+      const previewImage = document.getElementById('previewImage');
+      function previewSelectedImage() {
+        const file = imageInput.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = function(e) { previewImage.src = e.target.result; }
+        }
+      }
+      imageInput.addEventListener('change', previewSelectedImage);
+      </script>
+      <br>
+
+      <!-- Sender Name -->
+      <label for="senderFirstName">First Name:</label>
+        <input type="text" id="senderFirstName" name="senderFirstName" required>
+      <label for="senderLastName">Last Name:</label>
+        <input type="text" id="senderLastName" name="senderLastName" required>
+
+    </section>
+
+    <!-- Recipient Details -->
+    <section id = "recipient">
+      <h2>Recipient Details</h2>
+      <br>
+      <!-- Recipient Name -->
+      <label for="recipientFirstName">First Name:</label>
+        <input type="text" id="recipientFirstName" name="recipientFirstName" required>
+      <label for="recipientLastName">Last Name:</label>
+        <input type="text" id="recipientLastName" name="recipientLastName" required>
+      
+      <!-- Recipient Message -->
+      <label for="recipientMessage">Message:</label>
+        <input type="text" id="recipientMessage" name="recipientMessage" minlength="10" required>
+
+      <!-- Notify Recipient -->
+      <label for="notifyRecipientMulti">Notify Recipient:</label>
+        <div class="radio">
+            <label><input type="radio" name="notifyRecipientMulti" value="email" required> Email</label>
+            <label><input type="radio" name="notifyRecipientMulti" value="sms"> SMS</label>
+            <label><input type="radio" name="notifyRecipientMulti" value="dontNotify"> Don't Notify</label>
+        </div>
+
+      <label for="recipientEmail">Email:</label>
+        <input type="text" id="recipientEmail" name="recipientEmail">
+      <label for="recipientPhoneNumber">Phone Number:</label>
+        <input type="number" id="recipientPhoneNumber" name="recipientPhoneNumber">
+    </section>
+    
+
+    <!-- Payment Details -->
+    <section id = "payment">
+      <h2>Payment Details</h2>
+      <br>
+      <!-- Card Info -->
+      <label for="cardType">Card Type:</label>
+      <select id="cardType" name="cardType" required>
+        <option value="visa">Visa</option>
+        <option value="mastercard">Mastercard</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="cardNumber">Card Number:</label>
+        <input 
+          type="text" 
+          id="cardNumber" 
+          name="cardNumber"
+          pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"
+          inputmode="numeric"
+          maxlength="19"
+          required 
+        >
+
+      <label for="expirationDate">Expiration:</label>
+        <input type="date" id="expirationDate" name="expirationDate" required>
+
+      
+      <label for="CCV">CCV:</label>
+        <input type="password" id="CCV" name="CCV" pattern="[0-9]{3,4}" required>
+
+
+      <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" step="0.01" min="0" required>
+
+      <!-- Terms -->
+      <label for="terms">
+        <input type="checkbox" id="terms" name="terms" required>
+        I agree to the <a href="#">Terms and Conditions</a>.
+      </label>
+    </section>
+
+    <button type="submit">Submit</button>
+  </form>
+  <script type="module" src="../js/register.js"></script>
+    
+</body>
+</html>

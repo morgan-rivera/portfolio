@@ -1,0 +1,28 @@
+main {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+main input {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+
+#errorbox {
+  background-color: #debaba;
+  border: 1px solid #db7d7d;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+#errorbox.hidden {
+  visibility: hidden;
+}

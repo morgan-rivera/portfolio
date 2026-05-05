@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Plants - Evergreen</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="../static/css/plants.css">
+    <script type="module" src="../static/js/sw.js" defer></script>
+
+    <!-- BEGIN FAVICON -->
+    <link rel="icon" href="/static/images/favicon-96x96.png">
+    <meta name="theme-color" content="#1e4b3f">
+    <link rel="apple-touch-icon" sizes="192x192" href="/static/images/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="/static/images/icon-384x384.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="/static/images/icon-512x512.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="/static/images/icon-512x512.png">
+    <!-- END FAVICON -->
+    <!-- BEGIN INSTALLABLE APP-->
+    <link rel="manifest" href="/static/manifest.webmanifest" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-title" content="Evergreen">
+    <!-- END INSTALLABLE APP-->
+
+</head>
+ 
+<body>
+    <!-- top bar -->
+    <header class="top-bar">
+        <h1>Evergreen</h1>
+        <img src="../static/images/logo.svg" alt="Evergreen Logo" class="logo">
+    </header>
+
+    <div id="notification" class="hidden notification"></div>
+    <!-- main content-->
+    <main>
+        <!-- page header -->
+        <div class="page-header">
+            <h1>Explore Plants</h1>
+            <p>Discover plants</p>
+        </div>
+
+        <!-- search and filter Bar -->
+        <div class="filter-bar">
+            <div class="search-box">
+                <input type="text" id="search" placeholder="Search plants..." class="search-input">
+            </div>
+            
+            <div class="filters">
+                <select id="filter-difficulty" class="filter-select">
+                    <option value="">All Difficulties</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+
+                <select id="filter-sunlight" class="filter-select">
+                    <option value="">All Sunlight</option>
+                    <option value="low">Low Light</option>
+                    <option value="medium">Medium Light</option>
+                    <option value="bright">Bright Light</option>
+                </select>
+
+                <select id="filter-size" class="filter-select">
+                    <option value="">All Sizes</option>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+
+                <!-- clears all filtering -->
+                <button id="clear-filters" class="clear-btn">Clear Filters</button>
+
+                <!-- adding a new plant feature with photo uploading -->
+                <!-- <button id="add-plant-btn" class="add-plant-btn">Add New Plant</button> -->
+            </div>
+        </div>
+
+        <!-- plants grid -->
+        <div class="plants-grid" id="plants-grid">
+            <!-- DONE: plants will be loaded here via js -->
+            <div class="loading">Loading plants...</div>
+        </div>
+    </main>
+
+    <!-- bottom bar -->
+    <nav class="bottom-bar">
+        <a href="/dashboard" class="active">
+            <img src="/static/images/icons/home_icon.png" alt="homeIcon" style="width: 24px; height: 24px;">
+            <!-- <span class="nav-icon">&#127968;</span> -->
+            <span>Home</span>
+        </a>
+        <a href="/plants">
+            <img src="/static/images/icons/plant_icon.png" alt="plantIcon" style="width: 24px; height: 24px;">
+            <!-- <span class="nav-icon">&#127807;</span> -->
+            <span>Explore Plants</span>
+        </a>
+        <a href="/schedule">
+            <img src="/static/images/icons/schedule_icon.png" alt="scheduleIcon" style="width: 24px; height: 24px;">
+            <!-- <span class="nav-icon">&#128197;</span> -->
+            <span>Schedule</span>
+        </a>
+        <a href="/profile">
+            <!-- <span class="nav-icon">&#128100;</span> -->
+            <img src="/static/images/icons/profile_icon.png" alt="scheduleIcon" style="width: 24px; height: 24px;">
+            <span>Profile</span>
+        </a>
+    </nav>
+
+
+    <!-- js -->
+    <script src="../static/js/plants.js" type="module"></script>
+</body>
+</html>

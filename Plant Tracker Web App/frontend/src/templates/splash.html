@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evergreen - Splash screen</title>
+    <link rel="stylesheet" href="../static/css/splash.css">
+    <script type="module" src="../static/js/sw.js" defer></script>
+    <!-- BEGIN FAVICON -->
+    <link rel="icon" href="/static/images/favicon-96x96.png">
+    <meta name="theme-color" content="#1e4b3f">
+    <link rel="apple-touch-icon" sizes="192x192" href="/static/images/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="/static/images/icon-384x384.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="/static/images/icon-512x512.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="/static/images/icon-512x512.png">
+    <!-- END FAVICON -->
+</head>
+<body>
+    <!-- <p>Welcome</p> -->
+    <div class="splash-container">
+        <img src="../static/images/logo.svg" alt="PlantCare Logo" class="logo">
+        <h1>Welcome</h1>
+        <div class="loader">Loading...</div>
+    </div>
+
+    <script>
+        // this redirects to login page after 2 seconds
+        setTimeout(function() {
+            window.location.href = '/login';
+        }, 2000);
+    </script>
+
+</body>
+</html>

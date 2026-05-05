@@ -1,0 +1,6 @@
+.DS_Store
+**/.DS_Store
+database/data/
+.env
+api/node_modules
+database/data/

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Howler - Profile</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="/static/js/header.js" type="module" defer></script>
+  <script src="/static/js/profile.js" type="module" defer></script>
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="px-4 py-2 shadow-sm">
+    <div class="title">Howler</div>
+    <div class="dropdown header-user-dropdown">
+        <!-- Header username and avatar -->
+        <div class="d-flex align-items-center" id="userDropdownTrigger" data-bs-toggle="dropdown">
+            <span id="username" class="username text-white me-2">@Username</span>
+            <img id="avatar" class="avatar" src="" alt="Avatar">
+        </div>
+        
+        <!-- Header dropdown -->
+        <ul class="dropdown-menu dropdown-menu-end shadow">
+            <li><a class="dropdown-item" href="/feed">Home</a></li>
+            <li><a class="dropdown-item" href="/profile">My Profile</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><button class="dropdown-item text-danger" id="logout-btn">Logout</button></li>
+        </ul>
+    </div>
+  </header>
+  
+  <main class="container mt-4 mb-4">
+    <div class="row">
+    <!-- Left sidebar column -->
+        <div class="col-md-3">
+            <!-- Navigation Bar -->
+            <nav class="card shadow-sm p-3 mb-4">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                <a class="nav-link border-bottom py-2 text-dark" href="/feed">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link py-2 text-dark" href="/profile">My Profile</a>
+                </li>
+            </ul>
+            </nav>
+
+            <!-- Following List under sidebar -->
+            <div class="card shadow-sm mb-4">
+            <div class="card-header bg-white fw-bold">Following</div>
+            <ul class="list-group list-group-flush" id="profile-following-list"></ul>
+        </div>
+    </div>
+
+    <!-- Right main column -->
+    <div class="col-md-9">
+        <!-- User Info -->
+        <div class="card shadow-sm p-4 mb-4 text-center">
+            <img id="profile-avatar-img" class="rounded-circle mb-3 mx-auto shadow-sm" 
+                style="width:120px; height:120px; object-fit:cover; background:#eee;" src="" alt="Profile Avatar">
+            <h2 id="profile-display-username" class="fw-bold mb-1">@Username</h2>
+            <p id="profile-display-name" class="text-muted mb-3">First Last</p>
+            <div id="profile-follow-section"></div>
+        </div>
+
+        <!-- User Howls -->
+        <div id="user-howls">
+            <h5 class="fw-bold mb-3">Howls</h5>
+            <div id="profile-howl-list"></div>
+        </div>
+    </div>
+  </main>
+</body>
+</html>

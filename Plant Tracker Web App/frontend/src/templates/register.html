@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evergreen Sign Up</title>
+  <link rel="stylesheet" href="../static/css/styles.css">
+  <link rel="stylesheet" href="../static/css/login.css">
+  <script type="module" src="../static/js/registration.js" defer></script> <!--updated to use module-->
+  <script type="module" src="../static/js/sw.js" defer></script>
+  <!-- BEGIN FAVICON -->
+  <link rel="icon" href="/static/images/favicon-96x96.png">
+  <meta name="theme-color" content="#1e4b3f">
+  <link rel="apple-touch-icon" sizes="192x192" href="/static/images/icon-192x192.png">
+  <link rel="apple-touch-icon" sizes="256x256" href="/static/images/icon-384x384.png">
+  <link rel="apple-touch-icon" sizes="256x256" href="/static/images/icon-512x512.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="/static/images/icon-512x512.png">
+  <!-- END FAVICON -->
+</head>
+<body>
+  <!-- Register -->
+  <h1>WELCOME TO</h1>
+  <img src="../static/images/logo.svg" alt="Evergreen Logo" class="logo">
+  <h2>Stay on top of your plants schedule effortlessly!</h1>
+
+
+  <div id="notification" class="notification hidden"></div>
+    
+  <!-- Register form -->
+  <form id="register"action="/api/auth/register" method="POST" novalidate>
+
+    <div class="form-row">
+        <label for="name">Username:</label>
+        <input type="text" id="username" name="username" required>
+    </div>
+
+    <div class="form-row">
+        <label for="email">Email address:</label>
+        <input type="text" id="email" name="email" required>
+    </div>
+
+    <div class="form-row">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"required>
+    </div>
+    
+    <button type="submit">Sign Up</button>
+
+  </form>
+
+  <div id="errorbox" class="hidden error-message"></div> <!--to display errors (see registration.js)-->
+  <br>
+  <p>Already have an account? <a href="/login">Log In</a></p>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evergreen - Offline</title>
+  <link href='/static/css/styles.css' rel='stylesheet'/>
+  <script src="/static/js/sw.js" type="module"></script>
+  <script type="module" src="../static/js/sw.js" defer></script>
+</head>
+
+<body>
+    <!-- top bar -->
+    <header class="top-bar">
+        <h1>Evergreen</h1>
+        <img src="../static/images/logo.svg" alt="Evergreen Logo" class="logo">
+    </header>
+
+  <main>
+    <h1>You are offline</h1>
+    <h2>This page is not currently available.</h2>
+  </main>
+
+  <!-- Bottom Navigation -->
+  <nav class="bottom-bar">
+    <a href="/dashboard" class="active">
+        <img src="/static/images/icons/home_icon.png" alt="homeIcon" style="width: 24px; height: 24px;">
+        <span>Home</span>
+    </a>
+    <a href="/plants">
+        <img src="/static/images/icons/plant_icon.png" alt="plantIcon" style="width: 24px; height: 24px;">
+        <span>Explore Plants</span>
+    </a>
+    <a href="/schedule">
+        <img src="/static/images/icons/schedule_icon.png" alt="scheduleIcon" style="width: 24px; height: 24px;">
+        <span>Schedule</span>
+    </a>
+    <a href="/profile">
+        <img src="/static/images/icons/profile_icon.png" alt="scheduleIcon" style="width: 24px; height: 24px;">
+        <span>Profile</span>
+    </a>
+  </nav>
+
+</body>
+
+</html>

@@ -1,0 +1,485 @@
+/*  styling for [explore plants] page */
+
+/* page header*/
+.page-header {
+    text-align: center;
+    margin: 20px 0 30px 0;
+}
+
+.page-header h1 {
+    color: #1e4b3f; 
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* filter bar */
+.filter-bar {
+    background-color: #bfc1c3b9;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-box {
+    flex: 1;
+    min-width: 250px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #1e4b3f; 
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #EEE; 
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #1e4b3f;
+    box-shadow: 0 0 5px rgba(30, 75, 63, 0.3);
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-select {
+    padding: 12px 15px;
+    border: 2px solid #1e4b3f; 
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #EEE; 
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #1e4b3f;
+    box-shadow: 0 0 5px rgba(30, 75, 63, 0.3);
+}
+
+/* Plants Grid */
+.plants-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* plant card */
+.plant-card {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 4px solid #1e4b3f; 
+    background-color: #EEE; 
+    transition: transform 0.2s;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.plant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(30, 75, 63, 0.3);
+}
+
+.plant-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #1e4b3f;
+}
+
+.plant-info {
+    padding: 15px;
+}
+
+.plant-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #1e4b3f;
+    margin: 0 0 5px 0;
+}
+
+.plant-scientific {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    margin: 0 0 10px 0;
+}
+
+.plant-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.plant-tag {
+    background-color: #bfc1c3b9; 
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    border: 1px solid #1e4b3f;
+}
+
+.plant-tag.difficulty.beginner {
+    background-color: #e8f5e9;
+    border-color: #2e7d32;
+}
+
+.plant-tag.difficulty.advanced {
+    background-color: #ffebee;
+    border-color: #c62828;
+}
+
+.plant-description {
+    color: #333;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 10px 0;
+}
+
+/* button */
+.add-plant-btn {
+    font-size: 1rem;
+    border-radius: 5px;
+    background-color: #1e4b3f; 
+    color: #EEE;
+    border: none;
+    padding: 10px 15px;
+    width: 100%;
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: background-color 0.2s;
+}
+
+.add-plant-btn:hover {
+    background-color: #0f2f27;
+}
+
+/* Loading and No Results */
+.loading, .no-results {
+    text-align: center;
+    padding: 40px;
+    color: #1e4b3f;
+    font-size: 1.2rem;
+    grid-column: 1 / -1;
+    border: 4px solid #1e4b3f;
+    background-color: #EEE;
+}
+
+/* explore button style */
+#explore-button {
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #1e4b3f;
+}
+
+/**button: clears filtering */
+.clear-btn {
+    padding: 8px 16px;
+    background-color: transparent;
+    border: 2px solid #1e4b3f;
+    color: #1e4b3f;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.clear-btn:hover {
+    background-color: #1e4b3f;
+    color: #EEE;
+}
+
+/**  ************************************ */
+/** this part is for upload/add a new plant ** */
+/**  ************************************ */
+
+
+.modal {
+    display: none; /* hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #EEE;
+    margin: 5% auto;
+    padding: 30px;
+    border: 4px solid #1e4b3f;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #1e4b3f;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: #0f2f27;
+}
+
+/* form styles */
+#addPlantForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+#addPlantForm label {
+    font-weight: bold;
+    color: #1e4b3f;
+}
+
+#addPlantForm input,
+#addPlantForm select,
+#addPlantForm textarea {
+    padding: 8px 12px;
+    border: 2px solid #1e4b3f;
+    border-radius: 5px;
+    background-color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#addPlantForm input[type="file"] {
+    border: none;
+    padding: 5px 0;
+}
+
+.submit-btn {
+    background-color: #1e4b3f;
+    color: #EEE;
+    border: none;
+    padding: 12px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #0f2f27;
+}
+
+small {
+    color: #666;
+    font-size: 0.8rem;
+}
+
+/* [Add New Plant] button */
+#add-plant-btn {
+    width: auto !important;
+    background-color: #1e4b3f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;        
+    font-size: 1.10rem;       
+    font-weight: normal;
+    cursor: pointer;
+    height: 28px;            
+    line-height: 1;          
+    white-space: nowrap;      
+    margin-left: 5px;
+    align-self: center;       
+}
+
+#add-plant-btn:hover {
+    background-color: #0f2f27;
+
+}
+
+
+
+/* ****** ****************** ****** */
+/** updates for mobile view         */
+/* ****** ****************** ****** */
+/*                                   */
+
+@media screen and (max-width: 768px) {
+    /* for header adjustments */
+    .page-header h1 {
+        font-size: 1.8rem; /* smaller title on mobile */
+    }
+    
+    .page-header p {
+        font-size: 1rem;
+    }
+    
+    /* filter bar -> use vertical */
+    .filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .search-box {
+        width:88%;
+    }
+    
+    /* filters --> vertical */
+    .filters {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+    
+    .filter-select {
+        width: 100%; /* full width dropdowns */
+    }
+    
+    /* clear filters button */
+    .clear-btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+    
+    /* [Add New Plant] button */
+    #add-plant-btn {
+        width: 100% !important;
+        margin-left: 0;
+        height: 36px; /* slightly larger for easier tapping */
+        font-size: 1rem;
+    }
+    
+    /* plants grid - 1 column on mobile */
+    .plants-grid {
+        grid-template-columns: 1fr; /* single column */
+        gap: 15px;
+    }
+    
+    /* plant cards */
+    .plant-card {
+        margin: 0 5px;
+    }
+    
+    .plant-image {
+        height: 180px; /* slightly smaller images */
+    }
+    
+    .plant-name {
+        font-size: 1.2rem;
+    }
+    
+    /* modal adjustments for mobile */
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        padding: 20px;
+        max-height: 70vh;
+    }
+    
+    .close-modal {
+        top: 10px;
+        right: 15px;
+        font-size: 32px; /* larger touch target */
+    }
+    
+    /* form elements */
+    #addPlantForm {
+        gap: 12px;
+    }
+    
+    .form-group input,
+    .form-group select {
+        padding: 10px; 
+        font-size: 16px; 
+    }
+    
+    .submit-btn {
+        padding: 14px; /* larger button for tapping */
+        font-size: 1rem;
+    }
+}
+
+/* (phones under 480px) */
+@media screen and (max-width: 480px) {
+    
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .plant-image {
+        height: 160px;
+    }
+    
+    .plant-info {
+        padding: 12px;
+    }
+    
+    .plant-details {
+        gap: 5px;
+    }
+    
+    .plant-tag {
+        font-size: 0.75rem;
+        padding: 3px 6px;
+    }
+    
+    .watering-info {
+        font-size: 0.9rem;
+    }
+    
+    /* bottom bar - icons and text fit */
+    .bottom-bar a {
+        font-size: 0.9rem;
+    }
+    
+    .nav-icon {
+        font-size: 1.2rem;
+    }
+}

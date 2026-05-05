@@ -1,0 +1,80 @@
+<!--
+note to team:
+since this doesn't have any APIClient calls (just shows some cool animation), 
+I left the inline script as is -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evergreen - Welcome Back!</title>
+    <link rel="stylesheet" href="../static/css/login-success.css">
+    <script type="module" src="../static/js/sw.js" defer></script>
+    <!-- BEGIN FAVICON -->
+    <link rel="icon" href="/static/images/favicon-96x96.png">
+    <meta name="theme-color" content="#1e4b3f">
+    <link rel="apple-touch-icon" sizes="192x192" href="/static/images/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="/static/images/icon-384x384.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="/static/images/icon-512x512.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="/static/images/icon-512x512.png">
+    <!-- END FAVICON -->
+</head>
+<body>
+
+    <div class="bg-gradient"></div>
+
+    <!-- Floating leaves -->
+    <div class="leaves" id="leaves"></div>
+
+    <!-- Main splash content -->
+    <div class="splash-content">
+
+        <!-- Animated checkmark -->
+        <div class="check-ring">
+            <div class="check-glow"></div>
+            <svg viewBox="0 0 100 100">
+                <circle class="ring-circle" cx="50" cy="50" r="45" />
+                <polyline class="check-path" points="30,52 44,66 70,36" />
+            </svg>
+        </div>
+
+        <h1 class="greeting">Welcome back!</h1>
+        <p class="sub-text">
+            Getting your garden ready...
+        </p>
+
+        <!-- Progress bar -->
+        <div class="progress-wrapper">
+            <div class="progress-track">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="progress-label">Loading dashboard</div>
+        </div>
+    </div>
+
+    <script>
+        // ── Generate floating leaf particles ──
+        const leavesContainer = document.getElementById('leaves');
+        const leafEmojis = ['🌿', '🍃', '☘️', '🌱', '🪴'];
+
+        for (let i = 0; i < 18; i++) {
+            const leaf = document.createElement('span');
+            leaf.className = 'leaf';
+            leaf.textContent = leafEmojis[Math.floor(Math.random() * leafEmojis.length)];
+            leaf.style.left = Math.random() * 100 + '%';
+            leaf.style.fontSize = (1 + Math.random() * 1.2) + 'rem';
+            leaf.style.animationDuration = (4 + Math.random() * 5) + 's';
+            leaf.style.animationDelay = (Math.random() * 3) + 's';
+            leavesContainer.appendChild(leaf);
+        }
+
+        // ── Redirect to dashboard after animation completes ──
+        setTimeout(function() {
+            window.location.href = '/dashboard';
+        }, 3600);
+    </script>
+
+</body>
+</html>

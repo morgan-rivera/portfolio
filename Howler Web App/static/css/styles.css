@@ -1,0 +1,114 @@
+/* Header */
+header {
+  background-color: #990000;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1050;
+  display: flex;
+  padding-left: 15px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Header user info */
+.header-user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+    object-fit: cover;
+}
+
+/* Header dropdown */
+.header-user-dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+.header-user-dropdown .dropdown-menu {
+    right: 0;
+    left: auto;
+    min-width: 160px;
+}
+
+/* Button */
+.btn {
+  border: 2px solid #990000;
+  background-color: #990000;
+  font-weight: bold;
+  color: white;
+}
+
+/* Links */
+a {
+  color: #990000;
+}
+
+/* user list on feed */
+.howlers-card, #howl-list {
+    height: 70vh; 
+    display: flex;
+    flex-direction: column;
+}
+
+.scrollable-list {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.follow-btn {
+    min-width: 100px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.user-name-container {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100px;
+    display: inline-block;
+    vertical-align: middle;
+}
+#user-list {
+    padding-left: 0;
+}
+
+/* small screen */
+@media screen and (max-width: 767px) {
+
+  nav.card {
+    display: none;
+  }
+  .howlers-card {
+    height: 30vh; 
+    display: flex;
+    flex-direction: column;
+  }
+  .card {
+    margin-bottom: 10px;
+  }
+
+  .follow-btn {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  main.container > .row {
+    display: flex;
+    flex-direction: column-reverse; /* Swaps the vertical stacking order */
+  }
+}
